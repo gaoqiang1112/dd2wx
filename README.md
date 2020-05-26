@@ -27,7 +27,7 @@ npm install dd2wx -D
 第一、 package.json 配置启动命令
 # 例如
 "scripts": {
-    "dd2wx": "node node_modules/dd2wx/src/index.js inputPath=D:/a/b"
+    "dd2wx": "node node_modules/dd2wx/index.js inputPath=D:/a/b"
 }
 # inputPath 为要转换的钉钉小程序的项目路径  
 # 转换后的微信小程序项目会生成在钉钉小程序的同级目录  项目名为钉钉小程序项目名称后+'WX'
