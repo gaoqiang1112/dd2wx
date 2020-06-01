@@ -7,7 +7,7 @@ var {_j} = require("./methods/jsChange")
 var {_c} = require("./methods/cssChange")
 var {_json} = require("./methods/jsonChange")
 var {_copy} = require("./methods/copyChange")
-var {copyFolder} = require("./util/util")
+var {copyFolder,delPath} = require("./util/util")
 var {config} = require("./config")
 
 var NEWPROJECTENDSTR = config.NEWPROJECTENDSTR
@@ -20,9 +20,11 @@ var readFilePath = path.resolve(inputPath);
 
 var reg =new RegExp(projectName);
 var writeFilePath = readFilePath.replace(reg,projectName+NEWPROJECTENDSTR)
-if (!fs.existsSync(writeFilePath)) {
-    fs.mkdirSync(writeFilePath)
+
+if (fs.existsSync(writeFilePath)) {
+    delPath(writeFilePath)
 }
+fs.mkdirSync(writeFilePath)
 // copy planB 到 util里
 fs.copyFileSync(path.join(process.cwd(),'./node_modules/dd2wx/',"./util/planB.js"),path.join(writeFilePath,'./planB.js'));
 
