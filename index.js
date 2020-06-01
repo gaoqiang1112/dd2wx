@@ -22,9 +22,9 @@ var reg =new RegExp(projectName);
 var writeFilePath = readFilePath.replace(reg,projectName+NEWPROJECTENDSTR)
 if (!fs.existsSync(writeFilePath)) {
     fs.mkdirSync(writeFilePath)
-    // copy planB 到 util里
-    fs.copyFileSync('./util/planB.js',path.join(writeFilePath,'./planB.js'));
 }
+// copy planB 到 util里
+fs.copyFileSync('./util/planB.js',path.join(writeFilePath,'./planB.js'));
 fileDisplay(readFilePath);
 
 /**
