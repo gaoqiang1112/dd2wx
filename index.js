@@ -24,7 +24,8 @@ if (!fs.existsSync(writeFilePath)) {
     fs.mkdirSync(writeFilePath)
 }
 // copy planB 到 util里
-fs.copyFileSync('./util/planB.js',path.join(writeFilePath,'./planB.js'));
+fs.copyFileSync(path.join(process.cwd(),'./node_modules/dd2wx/',"./util/planB.js"),path.join(writeFilePath,'./planB.js'));
+
 fileDisplay(readFilePath);
 
 /**
