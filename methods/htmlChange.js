@@ -17,6 +17,7 @@ function changeHtml(filedir,projectName) {
             var rule = [
                 // {reg:/dd/,target:"wx"},
                 {reg:/onTap/g,target:"bindtap"},
+                {reg:/.axml/g,target:".wxml"},
                 {reg:/onBlur/g,target:"bindblur"},
                 {reg:/a:/g,target:'wx:'},
                 {reg:/`.*?`/g,target:function(item){
