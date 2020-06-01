@@ -28,9 +28,7 @@ function copyFolder(from, to) {        // 复制文件夹到指定目录
 }
 
 function delPath(path){
-
     var info=fs.statSync(path);
-    console.info(info)
     if(info.isDirectory()){//目录
         var data=fs.readdirSync(path);
         if(data.length>0){
