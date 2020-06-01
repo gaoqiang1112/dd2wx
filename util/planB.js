@@ -8,6 +8,20 @@ function changeKey4Json(json,oddkey,newkey){
 // 重写ajax请求
 wx['httpRequest'] = function(params){
     changeKey4Json(params,'headers','header')
+    // 修正ajax返回res的status 变成statusCode
+    var successFun = params.success
+    delete params['success']
+    params['success'] = function (res) {
+        res['status'] = res['statusCode']
+        successFun(res)
+    }
+
+    var failFun = params.fail
+    delete params['fail']
+    params['fail'] = function (res) {
+        res['status'] = res['statusCode']
+        failFun(res)
+    }
     wx.request(params)
 }
 // 重写登录获取用户唯一标识
