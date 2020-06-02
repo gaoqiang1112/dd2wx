@@ -19,7 +19,7 @@ function changeHtml(filedir,projectName) {
                 {reg:/onTap/g,target:"bindtap"},
                 {reg:/.axml/g,target:".wxml"},
                 {reg:/onBlur/g,target:"bindblur"},
-                {reg:/a:/g,target:'wx:'},
+                {reg:/ a:/g,target:'wx:'},
                 {reg:/`.*?`/g,target:function(item){
                     return "'"+item.slice(1,item.length-1).replace(/\$\{/g,'\'+').replace(/\}/g,'+\'')+'\''
                 }}
