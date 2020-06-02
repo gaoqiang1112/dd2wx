@@ -67,3 +67,15 @@ wx['$uploadFile'] =  function (params) {
     changeKey4Json(params,'fileName','name')
     wx.uploadFile(params)
 }
+
+// 重写扫一扫代码
+wx['scan'] = function (params) {
+    var type = params['type']
+    var scanType = 'qrCode'
+    if(type == 'bar'){
+        scanType = "barCode"
+    }
+    params['type'] = scanType
+    changeKey4Json(params,'type','scanType')
+    wx.scanCode(params)
+}
