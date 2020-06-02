@@ -17,7 +17,9 @@ function changeCss(filedir,projectName) {
 
             var rule = [
                 {reg:/.acss/g,target:".wxss"},
-                // {reg:/onTap/,target:"bindtap"},
+                {reg:/(\-|\+)?\d+(\.\d+)?rem/g,target:function (item) {
+                    return item.split("rem")[0]*96+'rpx'
+                }},
                 // {reg:/onBlur/,target:"bindblur"},
                 // {reg:/a:/,target:'wx:'},
             ]
