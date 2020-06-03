@@ -77,6 +77,13 @@ wx['$showToast'] =  function (params) {
     wx.showToast(params)
 }
 
+// 创建wx.confirm
+wx['confirm'] =  function (params) {
+    params['cancelButtonText'] ? (params['showCancel'] = true) : (params['showCancel'] = false)
+    params['showCancel'] && changeKey4Json(params,'cancelButtonText','cancelText')
+    changeKey4Json(params,'confirmButtonText','confirmText')
+    wx.showModal(params)
+}
 // 重写扫一扫代码
 wx['scan'] = function (params) {
     var type = params['type']
