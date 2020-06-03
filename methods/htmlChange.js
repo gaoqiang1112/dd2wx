@@ -22,7 +22,10 @@ function changeHtml(filedir,projectName) {
                 {reg:/ a:/g,target:' wx:'},
                 {reg:/`.*?`/g,target:function(item){
                     return "'"+item.slice(1,item.length-1).replace(/\$\{/g,'\'+').replace(/\}/g,'+\'')+'\''
-                }}
+                }},
+                {reg:/formType/g,target:"form-type"},
+                {reg:/onSubmit/g,target:"bindsubmit"},
+                {reg:/onReset/g,target:"bindreset"},
             ]
             for(var i=0;i<rule.length;i++){
                 line = line.replace(rule[i].reg,rule[i].target)
