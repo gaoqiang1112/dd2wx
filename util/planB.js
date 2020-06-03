@@ -68,6 +68,15 @@ wx['$uploadFile'] =  function (params) {
     wx.uploadFile(params)
 }
 
+// 重写 uploadFile  替换 内部的 filePaths => tempFilePaths
+wx['$showToast'] =  function (params) {
+    changeKey4Json(params,'content','title')
+    if(params['type']){
+        changeKey4Json(params,'type','icon')
+    }
+    wx.showToast(params)
+}
+
 // 重写扫一扫代码
 wx['scan'] = function (params) {
     var type = params['type']

@@ -41,6 +41,9 @@ function changeJs(filedir,projectName,fileNamePre) {
                 {reg:/\.uploadFile/g,target:function (item) {
                     return '.$uploadFile'
                 }},
+                {reg:/\.showToast/g,target:function (item) {
+                    return '.$showToast'
+                }},
                 {reg:/\.(currentTarget|target)\.dataset\.[\w]{1,}/g,target:function (item) {
                     return item.split("dataset.")[0]+'dataset.'+item.split("dataset.")[1].toLowerCase()
                 }},
