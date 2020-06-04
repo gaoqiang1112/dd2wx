@@ -1,11 +1,26 @@
 {
   "name": "dd2wx",
   "version": "1.0.17",
-  "description": "",
+  "description": "自动将钉钉小程序代码转换成微信小程序代码",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaoqiang1112/dd2wx.git"
+  },
+  "keywords": [
+    "dd",
+    "wx",
+    "钉钉小程序",
+    "微信小程序",
+    "小程序转换"
+  ],
+  "author": "gaoqiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaoqiang1112/dd2wx/issues"
+  },
+  "homepage": "https://github.com/gaoqiang1112/dd2wx#readme"
 }
