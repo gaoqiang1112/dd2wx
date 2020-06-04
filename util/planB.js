@@ -73,6 +73,8 @@ wx['$showToast'] =  function (params) {
     changeKey4Json(params,'content','title')
     if(params['type']){
         changeKey4Json(params,'type','icon')
+    }else{
+        params['icon'] = "none"
     }
     wx.showToast(params)
 }
