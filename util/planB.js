@@ -51,6 +51,13 @@ wx['$getStorage'] = function(params){
     wx.getStorage(params)
 }
 
+
+// 重写 removeStorageSync
+wx['$removeStorageSync'] =  function (params) {
+    wx.removeStorageSync(params['key'])
+}
+
+
 // 重写 chooseImage  替换 内部的 filePaths => tempFilePaths
 wx['$chooseImage'] =  function (params) {
     var successFun = params.success
@@ -79,6 +86,12 @@ wx['$showToast'] =  function (params) {
     wx.showToast(params)
 }
 
+// 重写 showLoading
+wx['$showLoading'] =  function (params) {
+    changeKey4Json(params,'content','title')
+    wx.showLoading(params)
+}
+
 // 创建wx.confirm
 wx['confirm'] =  function (params) {
     params['cancelButtonText'] ? (params['showCancel'] = true) : (params['showCancel'] = false)
@@ -86,6 +99,7 @@ wx['confirm'] =  function (params) {
     changeKey4Json(params,'confirmButtonText','confirmText')
     wx.showModal(params)
 }
+
 // 重写扫一扫代码
 wx['scan'] = function (params) {
     var type = params['type']
