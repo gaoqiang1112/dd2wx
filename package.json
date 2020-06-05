@@ -1,6 +1,6 @@
 {
   "name": "dd2wx",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "自动将钉钉小程序代码转换成微信小程序代码",
   "main": "index.js",
   "scripts": {
