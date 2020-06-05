@@ -72,22 +72,22 @@ function fileDisplay(filePath) {
                                 var fileNameSuf = thisFilename.split('.')[1];
                                 switch (fileNameSuf) {
                                     case 'acss':
-                                        await _c(filedir,projectName,fileNamePre)
+                                        await _c(filedir,projectName,fileNamePre,NEWPROJECTENDSTR)
                                         break;
                                     case 'axml':
                                         // console.info(thisFilename+222)
-                                        await _h(filedir,projectName,fileNamePre)
+                                        await _h(filedir,projectName,fileNamePre,NEWPROJECTENDSTR)
                                         break;
                                     case 'js':
-                                        await _j(filedir,projectName,fileNamePre)
+                                        await _j(filedir,projectName,fileNamePre,NEWPROJECTENDSTR)
                                         // console.info(thisFilename+333)
                                         break;
                                     case 'json':
                                         // console.info(thisFilename+444)
-                                        await _json(filedir,projectName,fileNamePre)
+                                        await _json(filedir,projectName,fileNamePre,NEWPROJECTENDSTR)
                                         break;
                                     default:
-                                        _copy(filedir,projectName,fileNamePre)
+                                        _copy(filedir,projectName,fileNamePre,NEWPROJECTENDSTR)
                                         break;
                                 }
                             }

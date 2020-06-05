@@ -3,11 +3,11 @@ var path = require('path');
 var readline = require('readline');
 var os = require('os');
 
-function changeJs(filedir,projectName,fileNamePre) {
+function changeJs(filedir,projectName,fileNamePre,NEWPROJECTENDSTR) {
     return new Promise(function (resolve,reject) {
         var fRead = fs.createReadStream(filedir); // 创建可读流
         var reg =new RegExp(projectName);
-        var fWrite = fs.createWriteStream(filedir.split(".")[0].replace(reg,projectName+'WX')+'.js');
+        var fWrite = fs.createWriteStream(filedir.split(".")[0].replace(reg,projectName+NEWPROJECTENDSTR)+'.js');
 
         var objReadline = readline.createInterface({
             input: fRead,

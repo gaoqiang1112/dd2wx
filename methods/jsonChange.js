@@ -4,10 +4,10 @@ var readline = require('readline');
 var os = require('os');
 var {changeKey4Json,delJosnKey} = require("../util/util.js")
 
-function changeJson(filedir,projectName,fileNamePre) {
+function changeJson(filedir,projectName,fileNamePre,NEWPROJECTENDSTR) {
     return new Promise(function (resolve,reject) {
         var reg =new RegExp(projectName);
-        var newPath = filedir.split(".")[0].replace(reg,projectName+'WX')+'.json';
+        var newPath = filedir.split(".")[0].replace(reg,projectName+NEWPROJECTENDSTR)+'.json';
         switch(fileNamePre) {
             case "app":
                 // var fRead = fs.createReadStream(filedir); // 创建可读流

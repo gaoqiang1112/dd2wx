@@ -3,11 +3,11 @@ var path = require('path');
 var readline = require('readline');
 var os = require('os');
 
-function changeHtml(filedir,projectName) {
+function changeHtml(filedir,projectName,NEWPROJECTENDSTR) {
     return new Promise(function (resolve,reject) {
         var fRead = fs.createReadStream(filedir); // 创建可读流
         var reg =new RegExp(projectName);
-        var fWrite = fs.createWriteStream(filedir.split(".")[0].replace(reg,projectName+'WX')+'.wxml');
+        var fWrite = fs.createWriteStream(filedir.split(".")[0].replace(reg,projectName+NEWPROJECTENDSTR)+'.wxml');
 
         var objReadline = readline.createInterface({
             input: fRead,
