@@ -3,7 +3,7 @@ var path = require('path');
 var readline = require('readline');
 var os = require('os');
 
-function changeCss(filedir,projectName,NEWPROJECTENDSTR) {
+function changeCss(filedir,projectName,fileNamePre,NEWPROJECTENDSTR) {
     return new Promise(function (resolve,reject) {
         var fRead = fs.createReadStream(filedir); // 创建可读流
         var reg =new RegExp(projectName);
