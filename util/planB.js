@@ -88,7 +88,9 @@ wx['$showToast'] =  function (params) {
 
 // 重写 showLoading
 wx['$showLoading'] =  function (params) {
-    changeKey4Json(params,'content','title')
+    if(params){
+        changeKey4Json(params,'content','title')
+    }
     wx.showLoading(params)
 }
 
